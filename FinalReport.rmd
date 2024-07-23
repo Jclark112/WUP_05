@@ -27,8 +27,8 @@ $H_A$: This treatment is effective in preventng AIDS among DrugUsers.
 
 # Methods
 
-treatments is an XXX variable 
-infected is a xxxxxxxxx variable 
+treatments is an categorical variable 
+infected is a categorical variable 
 so I use the cat~cat helper file
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
@@ -53,11 +53,26 @@ barchartGC(~infected + treatment,data=druggies, type="percent")
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1<-xtabs(~infected + treatment, data=druggies)
+rowPerc(table1)
+colPerc(table1)
+```
+Those that took the drug had less of a chance of being affected. 
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+The p-value is 0.0000001242 which makes it less than the value 0.05. TriUmpsal has positive affects on the Prevention of AIDS. 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+We reject the null hypothesis as the value of p is lower than 0.05, therefore the drug triUmpsal has a positive effecton the prevention of AIDS. 
