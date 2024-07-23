@@ -10,10 +10,9 @@ require(tidyverse)
 require(tigerstats)
 triUmp <-read.csv(file="triUmpsal.csv",header=TRUE)
 
-druggiess = select(triUmp, c(treatment, infected, DrugUser))
-#is.na(druggies$treatment)
-#is.na(druggies$infected)
-#is.na(druggies.$DrugUser)
+druggies = select(triUmp, c(treatment, infected, DrugUser))
+druggies = filter(druggies, DrugUser =="yes")
+
 
 ```
 
@@ -23,10 +22,14 @@ druggiess = select(triUmp, c(treatment, infected, DrugUser))
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the DrugUsers, does this drug seem effective?  Hint - use dplyr to obtain that subpopulation with the filter command.
 
-$H_0$:
-$H_A$:
+$H_0$:This treatment has no effect on preventing AIDS among DrugUsers. 
+$H_A$: This treatment is effective in preventng AIDS among DrugUsers. 
 
 # Methods
+
+treatments is an XXX variable 
+infected is a xxxxxxxxx variable 
+so I use the cat~cat helper file
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
@@ -39,6 +42,12 @@ $H_A$:
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+```{r}
+barchartGC(~infected + treatment,data=druggies)
+barchartGC(~infected + treatment,data=druggies, type="percent")
+
+```
 
 ### Numerical Descriptive Results
 
