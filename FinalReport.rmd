@@ -75,4 +75,4 @@ The p-value is 0.0000001242 which makes it less than the value 0.05. TriUmpsal h
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-We reject the null hypothesis as the value of p is lower than 0.05, therefore the drug triUmpsal has a positive effecton the prevention of AIDS. 
+We reject the null hypothesis as the value of p is lower than 0.05, therefore the drug triUmpsal has a positive effect on the prevention of AIDS. 
