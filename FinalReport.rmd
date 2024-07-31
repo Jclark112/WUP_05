@@ -48,7 +48,9 @@ barchartGC(~infected + treatment,data=druggies)
 barchartGC(~infected + treatment,data=druggies, type="percent")
 
 ```
-
+ 
+People with the drug have a lower percentage of getting infected than those with the placebo.  
+ 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
